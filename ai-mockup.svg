@@ -1,0 +1,61 @@
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" font-family="Josefin Sans, Arial, sans-serif">
+  <rect width="900" height="400" fill="#F0F4F9"/>
+
+  <!-- Panel 1: Stage Guidance -->
+  <g>
+    <rect x="24" y="16" width="270" height="368" rx="10" fill="#FFFFFF"/>
+    <rect x="24" y="16" width="270" height="52" rx="10" fill="#002366"/>
+    <rect x="24" y="52" width="270" height="16" fill="#002366"/>
+    <text x="44" y="48" font-size="14" font-weight="700" fill="#FFFFFF">Stage Guidance</text>
+    <rect x="40" y="86" width="238" height="120" rx="8" fill="#F0F4F9"/>
+    <text x="56" y="108" font-size="11" font-weight="700" fill="#002366">WESTBROOK FOUNDATION</text>
+    <text x="56" y="130" font-size="12" fill="#1B2430">Send a one-page program</text>
+    <text x="56" y="148" font-size="12" fill="#1B2430">overview before Friday. Maria</text>
+    <text x="56" y="166" font-size="12" fill="#1B2430">mentioned board meets</text>
+    <text x="56" y="184" font-size="12" fill="#1B2430">Tuesday, so timing matters.</text>
+    <rect x="40" y="222" width="238" height="34" rx="8" fill="#D6E4F5"/>
+    <text x="159" y="243" font-size="11" font-weight="700" fill="#002366" text-anchor="middle">Draft this follow-up &#8594;</text>
+  </g>
+
+  <!-- Panel 2: Draft Outreach -->
+  <g>
+    <rect x="314" y="16" width="270" height="368" rx="10" fill="#FFFFFF"/>
+    <rect x="314" y="16" width="270" height="52" rx="10" fill="#3A6DB5"/>
+    <rect x="314" y="52" width="270" height="16" fill="#3A6DB5"/>
+    <text x="334" y="48" font-size="14" font-weight="700" fill="#FFFFFF">Draft Outreach</text>
+    <rect x="330" y="86" width="238" height="220" rx="8" fill="#F0F4F9"/>
+    <text x="346" y="108" font-size="11" font-weight="700" fill="#002366">GREENSTONE BANK</text>
+    <text x="346" y="130" font-size="11.5" fill="#1B2430">Hi Alicia, following up on</text>
+    <text x="346" y="148" font-size="11.5" fill="#1B2430">our proposal for the spring</text>
+    <text x="346" y="166" font-size="11.5" fill="#1B2430">sponsorship. Happy to walk</text>
+    <text x="346" y="184" font-size="11.5" fill="#1B2430">the board through the</text>
+    <text x="346" y="202" font-size="11.5" fill="#1B2430">community impact numbers</text>
+    <text x="346" y="220" font-size="11.5" fill="#1B2430">before Tuesday's review,</text>
+    <text x="346" y="238" font-size="11.5" fill="#1B2430">whatever's most useful.</text>
+    <rect x="330" y="322" width="112" height="30" rx="7" fill="#FFFFFF"/>
+    <text x="386" y="341" font-size="10.5" font-weight="700" fill="#3A6DB5" text-anchor="middle">Personalize</text>
+    <rect x="450" y="322" width="118" height="30" rx="7" fill="#002366"/>
+    <text x="509" y="341" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Copy</text>
+  </g>
+
+  <!-- Panel 3: Fit Score -->
+  <g>
+    <rect x="604" y="16" width="270" height="368" rx="10" fill="#FFFFFF"/>
+    <rect x="604" y="16" width="270" height="52" rx="10" fill="#002366"/>
+    <rect x="604" y="52" width="270" height="16" fill="#002366"/>
+    <text x="624" y="48" font-size="14" font-weight="700" fill="#FFFFFF">Fit Score</text>
+    <text x="624" y="100" font-size="11" font-weight="700" fill="#002366">NORTHLINE HEALTH</text>
+    <text x="624" y="150" font-size="38" font-weight="700" fill="#3A6DB5">4/5</text>
+    <rect x="624" y="168" width="45" height="6" rx="3" fill="#3A6DB5"/>
+    <rect x="673" y="168" width="45" height="6" rx="3" fill="#3A6DB5"/>
+    <rect x="722" y="168" width="45" height="6" rx="3" fill="#3A6DB5"/>
+    <rect x="771" y="168" width="45" height="6" rx="3" fill="#3A6DB5"/>
+    <rect x="820" y="168" width="34" height="6" rx="3" fill="#D6E4F5"/>
+    <rect x="624" y="196" width="230" height="120" rx="8" fill="#F0F4F9"/>
+    <text x="640" y="220" font-size="12" fill="#1B2430">Strong alignment with</text>
+    <text x="640" y="238" font-size="12" fill="#1B2430">health equity focus.</text>
+    <text x="640" y="256" font-size="12" fill="#1B2430">Giving history skews</text>
+    <text x="640" y="274" font-size="12" fill="#1B2430">toward smaller regional</text>
+    <text x="640" y="292" font-size="12" fill="#1B2430">nonprofits, similar in size.</text>
+  </g>
+</svg>

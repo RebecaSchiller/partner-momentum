@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Setup Guide: Partner Momentum (Windows)</title>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ocean: #002366; --ocean-mid: #002d7a;
+  --horizon: #3A6DB5; --horizon-mid: #4d7dc0;
+  --mist: #D6E4F5; --fog: #F0F4F9;
+  --ink: #1A1F2E; --slate: #4A5568; --stone: #8A9BB0;
+  --white: #FFFFFF;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Josefin Sans', sans-serif; background: var(--fog); color: var(--ink); font-size: 17px; line-height: 1.5; margin: 0; }
+nav { background: var(--ocean); border-bottom: 2px solid var(--horizon); padding: 0 3rem; height: 72px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { display: flex; align-items: center; gap: 12px; color: #fff; font-size: 18px; font-weight: 700; text-decoration: none; letter-spacing: 0.02em; }
+.nav-brand .brand-sub { font-size: 10px; font-weight: 400; color: var(--mist); letter-spacing: 0.1em; text-transform: uppercase; display: block; line-height: 1; margin-top: 3px; }
+.nav-cta { background: var(--horizon); color: #fff; border: none; border-radius: 6px; padding: 10px 24px; font-size: 13px; font-family: inherit; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background 0.15s; }
+.nav-cta:hover { background: var(--horizon-mid); }
+.hero { background: var(--ocean); padding: 5rem 3rem 4rem; text-align: center; }
+.hero-eyebrow { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mist); background: rgba(214,228,245,0.12); border: 1px solid rgba(214,228,245,0.25); border-radius: 99px; padding: 6px 18px; margin-bottom: 1.5rem; }
+.hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #fff; margin-bottom: 1rem; line-height: 1.15; }
+.hero p { font-size: 1.1rem; color: rgba(214,228,245,0.85); max-width: 540px; margin: 0 auto; line-height: 1.5; }
+.page-wrap { background: var(--ocean); padding: 0 10rem; }
+.page-inner { background: var(--white); padding: 4rem 4rem 5rem; }
+.setup-step { margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid var(--mist); }
+.setup-step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.step-header { display: flex; align-items: flex-start; gap: 1.25rem; margin-bottom: 1.5rem; }
+.step-badge { width: 48px; height: 48px; border-radius: 50%; background: var(--ocean); color: var(--mist); font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--horizon); margin-bottom: 4px; }
+.step-header h2 { font-size: 1.6rem; font-weight: 700; color: var(--ocean); line-height: 1.2; }
+.step-body p { font-size: 1.05rem; color: var(--slate); line-height: 1.5; margin-bottom: 1.25rem; }
+.step-body p:last-child { margin-bottom: 0; }
+.instruction-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0; }
+.instruction-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 1.05rem; color: var(--slate); line-height: 1.5; }
+.instruction-list li .i-num { width: 24px; height: 24px; border-radius: 50%; background: var(--mist); color: var(--ocean); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.code-block { background: var(--ink); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; position: relative; max-height: 420px; overflow-y: auto; }
+.code-block pre { font-family: 'Courier New', Courier, monospace; font-size: 12px; color: var(--mist); line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+.code-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); margin-bottom: 10px; }
+.copy-btn { position: sticky; float: right; top: 0; background: rgba(214,228,245,0.12); border: 1px solid rgba(214,228,245,0.2); color: var(--mist); border-radius: 6px; padding: 5px 12px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-family: inherit; cursor: pointer; transition: background 0.15s; }
+.copy-btn:hover { background: rgba(214,228,245,0.22); }
+.callout { background: var(--fog); border-left: 3px solid var(--horizon); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 1rem; color: var(--slate); line-height: 1.5; }
+.callout strong { color: var(--ocean); }
+code { background: var(--mist); color: var(--ocean); padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+.setup-cta { background: var(--ocean); padding: 0 10rem; }
+.setup-cta-inner { background: var(--white); padding: 3rem 4rem; text-align: center; border-top: 3px solid var(--horizon); }
+.setup-cta h2 { font-size: 1.8rem; font-weight: 700; color: var(--ocean); margin-bottom: 0.75rem; }
+.setup-cta p { font-size: 1.05rem; color: var(--slate); margin-bottom: 2rem; }
+.btn-launch { background: var(--ocean); color: #fff; border: none; border-radius: 6px; padding: 14px 32px; font-size: 14px; font-family: inherit; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.15s; }
+.btn-launch:hover { background: var(--ocean-mid); }
+footer { background: var(--ink); padding: 2.5rem 3rem; text-align: center; }
+.footer-brand { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.footer-tagline { font-size: 13px; color: var(--mist); font-style: italic; margin-bottom: 8px; }
+.footer-sub { font-size: 13px; color: var(--stone); }
+.footer-sub a { color: var(--mist); text-decoration: none; }
+.footer-sub a:hover { text-decoration: underline; }
+@media (max-width: 900px) {
+  .page-wrap, .setup-cta { padding: 0 1.5rem; }
+  .page-inner, .setup-cta-inner { padding: 2.5rem 1.5rem; }
+  nav { padding: 0 1.5rem; }
+  .hero { padding: 3.5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">
+    <svg width="52" height="52" viewBox="0 0 32 32">
+      <rect width="32" height="32" rx="7" fill="#002366"></rect>
+      <rect x="5" y="16" width="6" height="10" rx="2" fill="#D6E4F5"></rect>
+      <rect x="13" y="10" width="6" height="16" rx="2" fill="#FFFFFF"></rect>
+      <rect x="21" y="13" width="6" height="13" rx="2" fill="#3A6DB5"></rect>
+    </svg>
+    <div>
+      Partner Momentum
+      <span class="brand-sub">Every partnership, one board.</span>
+    </div>
+  </a>
+  <a class="nav-cta" href="app.html">Launch the app &rarr;</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Setup guide &middot; Windows</div>
+  <h1>Set up Partner Momentum</h1>
+  <p>Takes about 10-15 minutes. You'll need a Google account. No software to install.</p>
+</section>
+
+<div class="page-wrap">
+  <div class="page-inner">
+
+    <!-- STEP 1 -->
+    <div class="setup-step" id="step1">
+      <div class="step-header">
+        <div class="step-badge">1</div>
+        <div class="step-header-text">
+          <div class="step-eyebrow">Step one</div>
+          <h2>Create your Google Sheet</h2>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Partner Momentum stores your pipeline in a Google Sheet that you own. Your data never leaves your Google account.</p>
+        <ul class="instruction-list">
+          <li><div class="i-num">1</div><div>Go to <strong>sheets.google.com</strong> and create a new blank spreadsheet. Sign in with your Google account if prompted.</div></li>
+          <li><div class="i-num">2</div><div>Right-click the tab at the bottom (currently "Sheet1") and select <strong>Rename</strong>. Type exactly: <code>Pipeline</code></div></li>
+          <li><div class="i-num">3</div><div>In row 1 of the Pipeline tab, enter these column headers exactly, one per column starting in cell A1: <code>ID, OrgName, ContactName, ContactRole, Stage, LogoURL, AskType, AskAmount, LastContactDate, NextStep, Priority, Tags, LinkedIn, NotesHistory, AddedAt, StageChangedAt</code></div></li>
+          <li><div class="i-num">4</div><div>Right-click the Pipeline tab again and select <strong>Duplicate</strong>. Rename the copy to exactly: <code>Archive</code>. Delete any rows below the header so Archive starts empty.</div></li>
+        </ul>
+        <div class="callout"><strong>Both tab names must be spelled exactly as shown</strong>, "Pipeline" and "Archive," each with a capital letter. If they're spelled differently, the app will not work.</div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="setup-step" id="step2">
+      <div class="step-header">
+        <div class="step-badge">2</div>
+        <div class="step-header-text">
+          <div class="step-eyebrow">Step two</div>
+          <h2>Add the Apps Script</h2>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Google Apps Script is a free tool built into Google Sheets. Paste the script below exactly as written.</p>
+        <ul class="instruction-list">
+          <li><div class="i-num">1</div><div>In your Google Sheet, click <strong>Extensions &gt; Apps Script</strong>. A new browser tab will open.</div></li>
+          <li><div class="i-num">2</div><div>Click inside the code editor. Press <strong>Ctrl+A</strong> to select all, then Delete to clear it.</div></li>
+          <li><div class="i-num">3</div><div>Copy the code below and paste it into the editor with <strong>Ctrl+V</strong>.</div></li>
+        </ul>
+        <div class="code-block">
+          <button class="copy-btn" onclick="copyCode()">Copy</button>
+          <div class="code-label">CODE TO PASTE</div>
+          <pre id="codeBlock">/**
+ * PARTNER MOMENTUM — Apps Script Backend
+ * Sheet tabs required: &quot;Pipeline&quot; (active/working cards) and &quot;Archive&quot; (auto-archived Declined cards)
+ * Both tabs must use the exact column order below.
+ */
+
+// ---- Column order (Pipeline and Archive tabs share this schema) ----
+var COLUMNS = [
+  &quot;ID&quot;, &quot;OrgName&quot;, &quot;ContactName&quot;, &quot;ContactRole&quot;, &quot;Stage&quot;,
+  &quot;LogoURL&quot;, &quot;AskType&quot;, &quot;AskAmount&quot;, &quot;LastContactDate&quot;, &quot;NextStep&quot;,
+  &quot;Priority&quot;, &quot;Tags&quot;, &quot;LinkedIn&quot;, &quot;NotesHistory&quot;, &quot;AddedAt&quot;, &quot;StageChangedAt&quot;
+];
+
+var ARCHIVE_AFTER_DAYS = 30;
+var DECLINED_STAGE = &quot;Declined&quot;;
+var ARCHIVE_SHEET_NAME = &quot;Archive&quot;;
+var PIPELINE_SHEET_NAME = &quot;Pipeline&quot;;
+
+function doGet(e) { return handleRequest(e); }
+
+function doPost(e) {
+  var p = JSON.parse(e.postData.contents);
+  return handleAction(p);
+}
+
+function handleRequest(e) {
+  var p = e.parameter;
+  return handleAction(p);
+}
+
+function handleAction(p) {
+  var out = {};
+
+  if (p.action === &quot;headers&quot;) {
+    out = { headers: COLUMNS };
+
+  } else if (p.action === &quot;read&quot;) {
+    runArchiveSweep(); // catch overdue Declined cards on every load
+    var sheet = getSheet(PIPELINE_SHEET_NAME);
+    var rows = sheet.getDataRange().getValues();
+    out = { rows: rows };
+
+  } else if (p.action === &quot;read_archive&quot;) {
+    var archiveSheet = getSheet(ARCHIVE_SHEET_NAME);
+    var rows = archiveSheet.getDataRange().getValues();
+    out = { rows: rows };
+
+  } else if (p.action === &quot;append&quot;) {
+    var sheet = getSheet(PIPELINE_SHEET_NAME);
+    var row = JSON.parse(p.row);
+    // AddedAt and StageChangedAt stamped server-side
+    row[14] = new Date().toISOString();
+    row[15] = new Date().toISOString();
+    sheet.appendRow(row);
+    out = { success: true };
+
+  } else if (p.action === &quot;update&quot;) {
+    var sheet = getSheet(PIPELINE_SHEET_NAME);
+    sheet.getRange(parseInt(p.row), parseInt(p.col)).setValue(p.value);
+    out = { success: true };
+
+  } else if (p.action === &quot;move_stage&quot;) {
+    // Dedicated action for stage changes so StageChangedAt always updates,
+    // which is what drives the 30-day archive timer.
+    var sheet = getSheet(PIPELINE_SHEET_NAME);
+    var rowNum = parseInt(p.row);
+    var stageCol = COLUMNS.indexOf(&quot;Stage&quot;) + 1;
+    var stageChangedCol = COLUMNS.indexOf(&quot;StageChangedAt&quot;) + 1;
+    sheet.getRange(rowNum, stageCol).setValue(p.newStage);
+    sheet.getRange(rowNum, stageChangedCol).setValue(new Date().toISOString());
+    out = { success: true };
+
+  } else if (p.action === &quot;clear&quot;) {
+    var sheet = getSheet(PIPELINE_SHEET_NAME);
+    sheet.getRange(parseInt(p.row), 1, 1, COLUMNS.length).clearContent();
+    out = { success: true };
+
+  } else if (p.action === &quot;archive_sweep&quot;) {
+    // Manual trigger, in addition to the automatic sweep on &quot;read&quot;
+    var moved = runArchiveSweep();
+    out = { success: true, archived: moved };
+
+  } else if (p.action === &quot;ai_suggest&quot;) {
+    out = handleAiSuggest(p);
+
+  } else {
+    out = { error: &quot;unknown action&quot; };
+  }
+
+  return ContentService
+    .createTextOutput(JSON.stringify(out))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function getSheet(name) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(name);
+  if (!sheet) {
+    sheet = ss.insertSheet(name);
+    sheet.appendRow(COLUMNS);
+  }
+  return sheet;
+}
+
+/**
+ * Moves any Pipeline row in &quot;Declined&quot; stage whose StageChangedAt is older
+ * than ARCHIVE_AFTER_DAYS into the Archive tab, then deletes it from Pipeline.
+ * Runs automatically on &quot;read&quot; and can also be called manually or on a
+ * time-driven trigger (Triggers &gt; Add Trigger &gt; archive_sweep &gt; time-driven, daily).
+ */
+function runArchiveSweep() {
+  var pipeline = getSheet(PIPELINE_SHEET_NAME);
+  var archive = getSheet(ARCHIVE_SHEET_NAME);
+  var data = pipeline.getDataRange().getValues();
+  var stageCol = COLUMNS.indexOf(&quot;Stage&quot;);
+  var stageChangedCol = COLUMNS.indexOf(&quot;StageChangedAt&quot;);
+  var cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - ARCHIVE_AFTER_DAYS);
+
+  var rowsToDelete = [];
+  var movedCount = 0;
+
+  for (var i = 1; i &lt; data.length; i++) { // skip header row
+    var row = data[i];
+    if (row[stageCol] === DECLINED_STAGE) {
+      var changedAt = new Date(row[stageChangedCol]);
+      if (!isNaN(changedAt.getTime()) &amp;&amp; changedAt &lt; cutoff) {
+        archive.appendRow(row);
+        rowsToDelete.push(i + 1); // +1 for 1-indexed sheet rows
+        movedCount++;
+      }
+    }
+  }
+
+  // Delete from bottom up so row numbers don&#x27;t shift mid-loop
+  for (var j = rowsToDelete.length - 1; j &gt;= 0; j--) {
+    pipeline.deleteRow(rowsToDelete[j]);
+  }
+
+  return movedCount;
+}
+
+// OpenAI model used for AI suggestions. Verify this is still current at
+// platform.openai.com/docs/models before relying on it long-term; model
+// names are updated by OpenAI independent of this script.
+var OPENAI_MODEL = &quot;gpt-4o&quot;;
+
+/**
+ * Three AI features, selected by p.type:
+ *   &quot;stage_guidance&quot; — suggest the next move given stage, notes, last contact
+ *   &quot;draft_outreach&quot; — draft a partnership pitch or funding ask from notes
+ *   &quot;fit_score&quot;      — score how well a prospect matches the org&#x27;s mission/ask
+ *
+ * Provider is selected by p.apiProvider: &quot;anthropic&quot; (default) or &quot;openai&quot;.
+ * p.apiKey should hold the key for whichever provider is selected.
+ */
+function handleAiSuggest(p) {
+  var apiKey = p.apiKey;
+  var type = p.type;
+  var provider = p.apiProvider || &quot;anthropic&quot;;
+
+  if (!apiKey || !type) {
+    return { error: &quot;Missing apiKey or type&quot; };
+  }
+
+  var prompt = buildAiPrompt(type, p);
+  if (!prompt) {
+    return { error: &quot;Unknown AI suggestion type&quot; };
+  }
+
+  if (provider === &quot;openai&quot;) {
+    return callOpenAi(apiKey, prompt, type);
+  } else if (provider === &quot;anthropic&quot;) {
+    return callAnthropic(apiKey, prompt, type);
+  } else {
+    return { error: &quot;Unknown apiProvider: &quot; + provider };
+  }
+}
+
+function callAnthropic(apiKey, prompt, type) {
+  var payload = JSON.stringify({
+    model: &quot;claude-sonnet-5&quot;,
+    max_tokens: 8000,
+    messages: [{ role: &quot;user&quot;, content: prompt }]
+  });
+
+  var options = {
+    method: &quot;post&quot;,
+    contentType: &quot;application/json&quot;,
+    headers: {
+      &quot;x-api-key&quot;: apiKey,
+      &quot;anthropic-version&quot;: &quot;2023-06-01&quot;
+    },
+    payload: payload,
+    muteHttpExceptions: true
+  };
+
+  try {
+    var resp = UrlFetchApp.fetch(&quot;https://api.anthropic.com/v1/messages&quot;, options);
+    var result = JSON.parse(resp.getContentText());
+    if (result.content &amp;&amp; result.content[0]) {
+      return { suggestion: result.content[0].text, type: type, provider: &quot;anthropic&quot; };
+    } else {
+      return { error: result.error ? result.error.message : &quot;No response from AI&quot; };
+    }
+  } catch (err) {
+    return { error: err.message };
+  }
+}
+
+function callOpenAi(apiKey, prompt, type) {
+  var payload = JSON.stringify({
+    model: OPENAI_MODEL,
+    max_tokens: 8000,
+    messages: [{ role: &quot;user&quot;, content: prompt }]
+  });
+
+  var options = {
+    method: &quot;post&quot;,
+    contentType: &quot;application/json&quot;,
+    headers: {
+      &quot;Authorization&quot;: &quot;Bearer &quot; + apiKey
+    },
+    payload: payload,
+    muteHttpExceptions: true
+  };
+
+  try {
+    var resp = UrlFetchApp.fetch(&quot;https://api.openai.com/v1/chat/completions&quot;, options);
+    var result = JSON.parse(resp.getContentText());
+    if (result.choices &amp;&amp; result.choices[0] &amp;&amp; result.choices[0].message) {
+      return { suggestion: result.choices[0].message.content, type: type, provider: &quot;openai&quot; };
+    } else {
+      return { error: result.error ? result.error.message : &quot;No response from AI&quot; };
+    }
+  } catch (err) {
+    return { error: err.message };
+  }
+}
+
+function buildAiPrompt(type, p) {
+  var orgName = p.orgName || &quot;this prospect&quot;;
+  var stage = p.stage || &quot;unknown stage&quot;;
+  var notes = p.notes || &quot;no notes on file&quot;;
+  var lastContact = p.lastContactDate || &quot;unknown&quot;;
+  var askType = p.askType || &quot;unspecified&quot;;
+
+  if (type === &quot;stage_guidance&quot;) {
+    return &quot;You are helping a nonprofit/partnerships professional manage a donor or partner pipeline. &quot; +
+      &quot;Prospect: &quot; + orgName + &quot;. Current stage: &quot; + stage + &quot;. Last contact: &quot; + lastContact + &quot;. &quot; +
+      &quot;Notes: &quot; + notes + &quot;. &quot; +
+      &quot;Suggest one specific, concrete next action to move this relationship forward, tailored to their current stage. &quot; +
+      &quot;Keep it to 2-3 sentences, no preamble.&quot;;
+
+  } else if (type === &quot;draft_outreach&quot;) {
+    return &quot;You are drafting outreach for a nonprofit/partnerships professional. &quot; +
+      &quot;Prospect: &quot; + orgName + &quot;. Ask type: &quot; + askType + &quot;. Notes on the relationship: &quot; + notes + &quot;. &quot; +
+      &quot;Draft a short, warm, specific outreach message (email length, not a letter) that references what&#x27;s &quot; +
+      &quot;actually in the notes rather than generic language. No em dashes. No preamble, just the draft.&quot;;
+
+  } else if (type === &quot;fit_score&quot;) {
+    return &quot;You are evaluating donor/partner fit for a nonprofit or organization. &quot; +
+      &quot;Prospect: &quot; + orgName + &quot;. Notes: &quot; + notes + &quot;. &quot; +
+      &quot;Based only on the notes provided, give a fit score from 1-5 and a one-sentence rationale. &quot; +
+      &quot;If the notes don&#x27;t contain enough information to judge fit, say so plainly instead of guessing. &quot; +
+      &quot;Format: &#x27;Score: X/5 — rationale.&#x27;&quot;;
+  }
+
+  return null;
+}
+</pre>
+        </div>
+        <ul class="instruction-list">
+          <li><div class="i-num">4</div><div>Press <strong>Ctrl+S</strong> to save. The file name should show as <code>Code.gs</code>.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="setup-step" id="step3">
+      <div class="step-header">
+        <div class="step-badge">3</div>
+        <div class="step-header-text">
+          <div class="step-eyebrow">Step three</div>
+          <h2>Deploy as a Web App</h2>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>This step creates the secure URL that connects Partner Momentum to your Google Sheet.</p>
+        <div class="callout">You'll see a security warning during authorization. This is normal and expected, the script only accesses your own Google Sheet.</div>
+        <ul class="instruction-list">
+          <li><div class="i-num">1</div><div>In the Apps Script editor, click the blue <strong>Deploy</strong> button (top right). Select <strong>New deployment</strong>.</div></li>
+          <li><div class="i-num">2</div><div>Click the gear icon next to "Select type" and choose <strong>Web app</strong>. Set Execute as: <strong>Me</strong>, and Who has access: <strong>Anyone</strong>.</div></li>
+          <li><div class="i-num">3</div><div>Click <strong>Deploy</strong>, then <strong>Authorize access</strong>. Sign in with your Google account. If you see "Google hasn't verified this app," click <strong>Advanced</strong>, then <strong>Go to [project name] (unsafe)</strong>, then <strong>Allow</strong>.</div></li>
+          <li><div class="i-num">4</div><div>Copy the Web App URL shown, it looks like <code>https://script.google.com/macros/s/XXXXXXXXXX/exec</code>. You'll need it in the next step.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="setup-step" id="step4">
+      <div class="step-header">
+        <div class="step-badge">4</div>
+        <div class="step-header-text">
+          <div class="step-eyebrow">Step four</div>
+          <h2>Connect the app</h2>
+        </div>
+      </div>
+      <div class="step-body">
+        <ul class="instruction-list">
+          <li><div class="i-num">1</div><div>Go to <strong>partnermomentum.app</strong> and click Launch the app.</div></li>
+          <li><div class="i-num">2</div><div>Paste your Web App URL into the "Google Apps Script Web App URL" field.</div></li>
+          <li><div class="i-num">3</div><div>Choose Anthropic or OpenAI as your AI provider, and paste your API key. You can skip this and add it later in Settings.</div></li>
+          <li><div class="i-num">4</div><div>Click <strong>Connect my sheet</strong>. If everything worked, you'll see your empty pipeline board. You're ready to add your first prospect.</div></li>
+        </ul>
+        <div class="callout"><strong>"Could not connect" error?</strong> Make sure you copied the full Web App URL including <code>/exec</code> at the end, and that deployment settings were Execute as Me, Who has access Anyone. Try redeploying: Deploy &gt; Manage deployments &gt; pencil icon &gt; New version &gt; Deploy.</div>
+        <p style="font-size:0.95rem;color:var(--stone);">Need help? <a href="mailto:rebeca@plainspeakingcomms.com" style="color:var(--horizon);">rebeca@plainspeakingcomms.com</a></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="setup-cta">
+  <div class="setup-cta-inner">
+    <h2>Ready to build momentum?</h2>
+    <p>You're all set. Open the app and add your first prospect.</p>
+    <a class="btn-launch" href="app.html">Launch Partner Momentum &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">Partner Momentum</div>
+  <div class="footer-tagline">Every partnership, one board.</div>
+  <div class="footer-sub">Built by <a href="https://plainspeakingcomms.com" target="_blank">Plain Speaking Communications</a> &nbsp;&middot;&nbsp; Your data lives in your own Google Sheet</div>
+</footer>
+
+<script>
+function copyCode() {
+  const code = document.getElementById('codeBlock').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 2000);
+  });
+}
+</script>
+
+</body>
+</html>
